@@ -1,21 +1,17 @@
 package hello.core.member;
 
 public class MemberServiceImpl implements MemberService {
+	
+	private final MemberRepository memberRepository = new MemoryMemberRepository();
 
 	@Override
 	public void join(Member member) {
-		// TODO 自動生成されたメソッド・スタブ
+		memberRepository.save(member);
 		
 	}
 
 	@Override
 	public Member findMember(Long memberId) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return memberRepository.findById(memberId);
 	}
-	
-	
-	
-	
-
 }
